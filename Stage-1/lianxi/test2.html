@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS动画 圆进行旋转</title>
+		<style type="text/css">
+			.demo-1 {
+				/*定位盒子*/
+				width: 40px;
+				height: 40px;
+				border: 2px solid;
+				border-color: #333 #333 rgba(144, 57, 57, 0);
+				border-radius: 50%;
+				margin: 0 auto;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				margin: -20px 0 0 -20px;
+				/*定义动画*/
+				animation: loading 1s linear both infinite;
+			}
+			/* 定义动画关键帧 */
+			@keyframes loading{
+				0%{transform: rotate(0deg);}
+				100%{transform: rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="demo-1">
+		</div>
+	</body>
+
+</html>

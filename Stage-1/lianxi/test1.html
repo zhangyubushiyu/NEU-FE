@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS变形 hover图片放大</title>
+	</head>
+	<style type="text/css">
+		.demo-1 {
+			text-align: center;
+			width: 200px;
+		}
+		.demo-1 div {
+			height: 200px;
+			border: 2px solid #ccc;
+			overflow: hidden;
+		}
+		.demo-1 img {
+			height: 200px;
+			/*动画过度时间*/
+			transition: 0.5s;
+
+		}
+		img:hover {
+			/*动画图片方大1.2倍*/
+			transform: scale(1.2);
+			-moz-transform: scale(1.2);
+			-ms-transform: scale(1.2);
+			-o-transform: scale(1.2);
+			-webkit-transform: scale(1.2);
+
+		}
+	</style>
+	<body>
+		<div class="demo-1">
+			<div class="">
+				<img src="http://img4.bbs.szhome.com/UploadFiles/Images/2009/06/30/0630154313327.jpg" alt="哈士奇" title="哈士奇" />
+			</div>
+			<p>hover图片放大</p>
+		</div>
+	</body>
+
+</html>

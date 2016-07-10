@@ -1,0 +1,44 @@
+body {
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+
+caption {
+	line-height: 30px;
+	font-weight: bold;
+	color: #000;
+}
+
+table {
+	width: 495px;
+	text-align: left;
+	text-indent: 1em;
+	border: 1px solid #eae9e9;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+thead {
+	background-color: #f7f7f7;
+	color: #3c3b3b;
+	text-indent: 1em;
+}
+
+thead tr th {
+	font-weight: bold;
+}
+
+table tr {
+	line-height: 40px;
+    border: 1px solid #eae9e9;
+	
+}
+table td,table th{
+    border: 1px solid #eae9e9;
+}
+tbody tr td:nth-child(1){
+	background-color: #f7f7f7;
+}
+table tr td.onbj{
+	background: none;
+}

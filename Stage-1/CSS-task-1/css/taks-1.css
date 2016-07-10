@@ -1,0 +1,9 @@
+body {font:26px/2 arial sans-serif;}
+/*外层div*/
+.parent {width:810px;color:#fff;margin:0 auto;text-align:center;}
+/*左边栏*/
+.side {width:200px;padding:100px 0;margin-right:10px;background-color:red;float:left;}
+/*右边栏*/
+.main {width:600px;padding:100px 0;float:right;background-color:blue;}
+/*清除浮动*/
+.clearfix:after {content:".";clear:both;height:0;display:block;overflow:hidden;visibility:hidden;}

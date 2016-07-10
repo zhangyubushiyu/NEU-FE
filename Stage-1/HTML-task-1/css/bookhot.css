@@ -1,0 +1,58 @@
+body {
+	font-family: "微软雅黑";
+	color: #666;
+}
+
+.book {
+	width: 300px;
+	margin: 0;
+}
+
+.book h2 {
+    font-size: 20px;
+    color: #1a1410;
+    line-height: 45px;
+    border-bottom: 2px solid #e4e4e4;
+    margin: 0;
+    height: 60px;
+}
+
+.hot-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hot-list li {
+	color: #000;
+	font-size: 18px;
+	line-height: 60px;
+	text-indent: 10px;
+	border-bottom: 1px dotted #e4e4e4;
+}
+
+.hot-list li a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	font-size: 20px;
+}
+
+.hot-list li span {
+	float: left;
+	text-align: center;
+	line-height: 63px;
+	margin-right: 10px;
+	vertical-align: middle;
+	display: table-cell;
+	height: 60px;
+}
+.hot-list li:nth-last-child(n+3){
+	color: #c01900;
+}
+.hot-list li:last-child{
+	border: none;
+}
+.hot-list li a:hover,.hot-list li:hover {
+	color: #c01900;
+}

@@ -1,0 +1,10 @@
+body {font:24px/2 arial sans-serif;}
+div {margin:0;padding:0;}
+/*幻灯片盒子*/
+.slide {width:200px;height:100px;position:relative;background-color:royalblue;}
+/*切换按钮定位*/
+.slide .pointer {height:33px;position:absolute;bottom:0;left:0;right:0;margin:0;padding-right:10px;text-align:right;}
+/*定义按钮样式*/
+.slide .pointer i {display:inline-block;width:10px;height:10px;border-radius:50%;background-color:#fff;margin:0 0 10px 5px;cursor:pointer;}
+/*按钮选中状态*/
+.slide .pointer .current {background-color:#000;}

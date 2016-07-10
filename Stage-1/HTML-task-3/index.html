@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML单元作业 task-3</title>
+		<link rel="stylesheet" type="text/css" href="css/task-3.css" />
+	</head>
+
+	<body>
+		<!--个人信息开始-->
+		<div class="user-form">
+			<!--表单开始-->
+			<form action="#" method="post">
+				<!--头像-->
+				<label for="user-hp">
+					<span>头像</span>
+					<input type="file" name="user-hp" id="user-hp" value="头像" />
+				</label>
+				<!--昵称-->
+				<label for="name">
+					<span>昵称</span>
+					<input type="text" id="name" name="name" value="昵称" />
+				</label>
+				<!--学历-->
+				<label for="Education">
+					<span>学历</span>
+					<select name="Education" id="Education">
+						<option value="大专">大专</option>
+						<option value="本科">本科</option>
+				</select>
+				</label>
+				<!--性别-->
+				<label for="sex" class="sex">
+					<span>性别</span>
+					<input type="radio" name="sex"  checked="checked" id="sex" value="男" />
+					<span >男</span>
+					<input type="radio" name="sex" id="sex-1" value="女" />
+					<span>女</span>
+				</label>
+				<!--爱好-->
+				<label for="hobby" class="hobby">
+					<span class="hobby-label">爱好</span>
+					<input type="checkbox" id="hobby" name="Film" value="电影" /><span>电影</span>
+					<input type="checkbox" id="hobby-p" name="Photography" value="摄影" /><span>摄影</span>
+					<input type="checkbox" id="hobby-m" name="Music" value="音乐" /><span>音乐</span>
+					<input type="checkbox" id="hobby-r" name="Read" value="阅读" /><span>阅读</span>
+				</label>
+				<!--签名-->
+				<label for="describe">
+					<span class="describe">签名</span>
+					<textarea name="describe" id="describe" rows="5" cols="44"></textarea>
+				</label>
+				<!--保存按钮-->
+				<button>保 存</button>
+			</form>
+			<!--表单结束-->
+		</div>
+		<!--个人信息结束-->
+	</body>
+
+</html>
