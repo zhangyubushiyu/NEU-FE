@@ -1,0 +1,33 @@
+.msg-txt p span:hover{
+	cursor: pointer;
+}
+.gz:hover{
+	background-color: #2fb556;
+}
+.nav li a:hover{
+	color: #2FB556;
+}
+.header .search:hover{
+	background-position: -151px -24px;
+}
+.column-v a:hover,.footer-r a:hover{
+	text-decoration: underline;
+}
+.contenr-l-list li:hover,.hot:hover,.video:hover{
+	border: 1px solid #dedcdc;
+}
+.contenr-l-list li:hover h3{
+	color: #39a030;
+}
+.page li:hover{
+	color: #fff;
+	background-color: #9dd8b1;
+}
+.page-down:hover,.page-up:hover{
+	cursor: pointer;
+}
+#qxgz:hover{
+	color: #21A557;
+	text-decoration: underline;
+}
+

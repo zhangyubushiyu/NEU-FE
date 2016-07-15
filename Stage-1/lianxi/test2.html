@@ -1,33 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>CSS动画 圆进行旋转</title>
 		<style type="text/css">
-			.demo-1 {
+			.box {
+				width: 1080px;
+				margin: 0 auto;
+			}
+			
+			.demo {
+				width: 160px;
+				height: 160px;
+				border: 1px solid #ccc;
+				float: left;
+				margin: 10px;
+			}
+			
+			.demo-1 .cercle {
 				/*定位盒子*/
 				width: 40px;
 				height: 40px;
 				border: 2px solid;
+				margin: 50px auto;
 				border-color: #333 #333 rgba(144, 57, 57, 0);
 				border-radius: 50%;
-				margin: 0 auto;
-				position: fixed;
-				left: 50%;
-				top: 50%;
-				margin: -20px 0 0 -20px;
 				/*定义动画*/
 				animation: loading 1s linear both infinite;
 			}
 			/* 定义动画关键帧 */
-			@keyframes loading{
-				0%{transform: rotate(0deg);}
-				100%{transform: rotate(360deg);}
+			
+			@keyframes loading {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			
+			.demo-2 .section {
+				/*定位盒子*/
+				width: 96px;
+				height: 12px;
+				margin: 75px auto;
+				overflow: hidden;
+			}
+			.bar{
+				width: 180px;
+				/*设定animation动画*/
+				animation:  bar 1s steps(5,end) both infinite;
+			}
+			.section i {
+				width: 8px;
+				height: 4px;
+				float: left;
+				margin: 4px;
+				background: #a7a3a3;
+			}
+			.bar i:nth-child(6){
+				transform: scale(1.5);
+				background: #000;
+			}
+			/*执行动画*/
+			@keyframes bar{
+				/*位移-80px*/
+				0%{transform: translate(-80px);}
+				80%,100%{transform: translate(0px);}
 			}
 		</style>
 	</head>
+
 	<body>
-		<div class="demo-1">
+		<div class="box">
+			<!--圆形旋转加载-->
+			<div class="demo-1 demo">
+				<div class="cercle"></div>
+			</div>
+			<!--色块加载-->
+			<div class="demo-2 demo">
+				<div class="section">
+					<div class="bar">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 

@@ -4,18 +4,70 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<style type="text/css">
+			div,
+			span {
+				background-color: pink;
+			}
+			
+			.sample {
+				display: none;
+				height: 100%;
+			}
+			
+			html,
+			body {
+				height: 50%;
+				line-height: ;
+			}
+		</style>
+	</head>
+	<body>
 
-		<body>
-			<label>姓名
-				<input type="text" id="nam1" value="" />
-				</label>
-<br />
-<br />
-<br />
-			<label for="name2">姓名
-				<input type="text" id="name2"  value="" />
-				</label>
-
-		</body>
+<script type="text/javascript">
+	var sum1=1;
+	var sum2=5;
+	while(sum1<=sum2){
+	document.write(sum1+"<br />");
+		sum1++;
+		
+	};
+	document.write("<hr />")
+	var count=10;
+	while (count>0){
+		document.write(count+"<br />");
+		count--;
+	}
+	alert("发射");
+	document.write("<hr />")
+	var u=43;
+	var v=20;
+	var temp=v;
+	while (v!=0){
+		temp=u%v;
+		u=v;
+		v=temp;
+	}
+	document.write(u+"和"+"v"+"的最大公约数是"+u);
+	
+	document.write("<hr />")
+	
+	var count1;
+	var count2;
+	count1=1;
+	while (count1<=10){
+		count2=1;
+//		alert(count2);
+		while (count2<=20){
+			count2++;
+		}
+		count1++;
+	}
+	document.write(count1+""+count2);
+	document.write("<hr />")
+	
+	
+</script>
+	</body>
 
 </html>

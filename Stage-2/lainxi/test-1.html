@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//			var ints= Math.floor(Math.random()*10);
+			//			console.log(ints);
+
+			//			var arr = [14, 1, 44, 56];
+			//			var sum = 0;
+			//			// 1.用for循环
+			//			function sum1(arr) {
+			//				var sum = 0;
+			//				for (var i = 0; i < arr.length; i++) {
+			//					sum += arr[i];
+			//				}
+			//				return sum;
+			//			}
+			//			document.writeln(sum1(arr));
+			//			// 2.用forEach()方法
+			//			function getSum(item, index, array) {
+			//				sum += item;
+			//			}
+			//			arr.forEach(getSum);
+			//			document.writeln(sum);
+			//			// 3.用map()方法
+			//			sum = 0;
+			//			arr.map(getSum);
+			//			document.writeln(sum);
+			//			// 4.用reduce()方法
+			//			function sum2(preResult, item, index, array) {
+			//				return preResult + item;
+			//			}
+			//			document.writeln(arr.reduce(sum2, 0));
+
+			var str = "welcome to NetEase!welcome to MOOC!";
+			var a = str.indexOf("to");
+			var b = str.indexOf("to", a + 1);
+			var arr = [1, 2,"a","b"];
+			var ret = arr.splice(1, 2, 3);
+			document.write(arr);
+			document.write(ret);
+		</script>
+		<br />
+	</body>
+
+</html>
