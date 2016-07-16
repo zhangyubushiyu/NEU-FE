@@ -5,6 +5,8 @@
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+	z-index: 999;
 }
 
 .login-win,
@@ -12,6 +14,7 @@
 	position: fixed;
 	left: 50%;
 	top: 50%;
+	display: none;
 }
 
 .login-win {
@@ -22,10 +25,11 @@
 	padding: 40px 53px 40px 40px;
 }
 
+
 .login-win h1 {
 	color: #444;
 	font-size: 18px;
-	margin-bottom: 12px;
+	/*margin-bottom: 12px;*/
 	font-weight: inherit;
 }
 
@@ -94,3 +98,19 @@
 	background-position: -117px -20px;
 	cursor: pointer;
 }
+.video-win{
+	padding: 20px 20px 30px 20px;
+	margin: -330px 0 0 -454px;
+	background-color: #fff;
+}
+.video-win h1{
+	color: #444;
+	font-size: 18px;
+	font-weight: inherit;
+	margin-bottom: 15px;
+}
+
+#videoPlay{
+	width: 887px;
+}
+
