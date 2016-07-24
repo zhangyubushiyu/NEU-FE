@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//实现type函数用于识别标准类型和内置对象类型
+			function getConstructorName(obj) {
+				return(obj === undefined || obj === null) ? obj : (obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1]);
+			}
+
+			var obj1 = {
+				a: 1,
+				b: 2,
+			};
+			////			var obj2=obj1;
+			//			var obj2 =new Object(obj1);
+			//			obj2.a=2;
+			//			obj1.a=3;
+			//克隆JS对象函数
+			function cloneCopy(obj) {
+				function Clone() {}
+				Clone.prototype = obj;
+				var o = new Clone();
+				for(var a in o) {
+					if(typeof o[a] == "object") {
+						o[a] = cloneCopy(o[a]);
+					}
+				}
+				return o;
+			}
+			var obj2 = cloneCopy(obj1);
+			obj2.a = 2;
+			obj2.b = 3;
+
+			function add1(i) {
+				console.log("函数声明：" + (i + 1));
+			}
+			add1(1);
+			var add2 = function(i) {
+				console.log("函数表达式：" + (i + 2));
+			}
+			add2(1);
+			var add3 = new Function("i", "console.log('函数实例化：' + (i + 3))");
+
+			add3(1)
+			var add2 = function(i) {
+				console.log("函数表达式：" + (i + 2));
+			}
+			add2(10)
+			var add3 = new Function("i", "console.log('函数实例化：' + (i + 3))");
+			add3(10)
+		</script>
+	</body>
+
+</html>

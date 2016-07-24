@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #0000FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">fd</div>
+		<script type="text/javascript">
+
+			//创建过期时间
+//			var date = new Date();
+//			date.setDate((date.getDate() + 365)); //+为设置多少天过期   -1代表永久删除  第二种方法 ";expires=" new Date(0);
+//			console.log(date);
+			//cookie完整形式
+			//			document.cookie="user=值";expires=失效时间;path=访问路径;domain=域名访问;secure=安全的http;
+			//写入cookie  
+//			document.cookie = "user=章鱼" + ";expires=" + date;
+			//			document.cookie="user1=章鱼哥"+";expires="+date;
+			//访问cookie
+//			console.log(document.cookie);
+
+			//设置cookie
+			function setCookie(name, value, expires, path, domain, secure) {
+				var cookieName = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+				if(expires instanceof Date) {
+					cookieName += ";expires" + expires;
+				}
+				if (path) {
+					cookieName += ";path" + path;
+				}
+				if (domain) {
+					cookieName += ";domain" + domain;
+				}
+				if (secure) {
+					cookieName += ";secure";
+				}
+				document.cookie=cookieName;
+			}
+			//过期时间
+			function setCookieDate(day) { //传递一个天数
+				var date=null;
+				if(typeof day == "number" && day > 0) {
+					date = new Date();
+					date.setDate(date.getDate() + day);
+				} else {
+					throw new Error("传递的时候不合法！必须是数字且大于0");
+				}
+				return date;
+			}
+			//读取cookie
+			function getCookie(name){
+				var cookieName=encodeURIComponent(name)+"=";
+				var cookieStart=document.cookie.indexOf(cookieName);
+				var cookieValue=null;
+				if (cookieStart>-1) {
+					var cookieEnd=document.cookie.indexOf(";",cookieStart);
+					if (cookieEnd==-1) {
+						cookieEnd=document.cookie.length;
+					}
+					cookieValue=decodeURIComponent(document.cookie.substring(cookieStart+cookieName.length,cookieEnd));
+				}
+				return cookieValue;
+			}
+			setCookie("user1","章鱼哥",setCookieDate(7));
+			setCookie("user44","章鱼哥44","7");
+			console.log(getCookie("user44"));
+			
+
+		</script>
+	</body>
+
+</html>

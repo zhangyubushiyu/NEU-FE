@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/ajax1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 200px;
+				background: red;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">fd</div>
+		<script type="text/javascript">
+//		window.loaded 
+			//调用ajax
+			addEvent(window,"load" , function() {
+				var box=document.getElementById("box");
+				
+				addEvent(box,"click",function(evt){
+					alert(box.innerHTML);
+				});
+//				ajax({
+//					method: "get", //传输方式
+//					url: "demo.php", //url地址
+//					data: { //传的参数
+//						"name": "Lee",
+//						"age": 100
+//					},
+//					success: function(text) {
+//						//成功后进这里
+//						alert(text);
+//					}
+//					async: true //同步方式，true异步, false不是异步
+//				});
+			});
+			
+		</script>
+	</body>
+
+</html>

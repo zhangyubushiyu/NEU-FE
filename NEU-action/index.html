@@ -4,28 +4,33 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta name="Keywords" content=""/>
-		<meta name="Description" content=""/>
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<title>网易云课堂</title>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/layout.css" />
 		<link rel="stylesheet" type="text/css" href="css/hover.css" />
 		<link rel="stylesheet" type="text/css" href="css/pop.css" />
-		<script src="js/call.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajax1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/md5.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--<script src="js/call.js" type="text/javascript" charset="utf-8"></script>-->
+
 	</head>
 
 	<body>
 		<!--顶部提示-->
-		<div class="msg">
+		<div class="msg" id="msg">
 			<div class="msg-txt bodymax">
 				<p>
 					网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！
 					<a href="#">立即查看&gt;</a>
-					<span><i></i>不再提示</span>
+					<span id="msg-off"><i></i>不再提示</span>
 				</p>
 			</div>
 		</div>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
 		<!--头部开始-->
 		<div class="header clearfix">
 			<!--头部logo-->
@@ -35,11 +40,11 @@
 			<!--关注&粉丝-->
 			<div class="concern">
 				<div class="gz" id="gz"><i>+</i>关注</div>
-				<div class="ygz">
+				<div class="ygz" id="ygz">
 					<span></span>已关注<i>|</i>
 					<a href="#" id="qxgz">取消</a>
 				</div>
-				<div class="fs">粉丝<span>45</span></div>
+				<div class="fs" id="fs">粉丝<span>45</span></div>
 			</div>
 			<!--搜索-->
 			<div class="search">
@@ -63,29 +68,33 @@
 		<!--头部结束-->
 
 		<!--banner开始-->
-		<div class="banner">
-			<ul class="">
-				<li>
-					<a href="http://open.163.com/" target="_blank"><img src="img/banner1.jpg" alt="" /></a>
-				</li>
-				<li>
-					<a href="http://study.163.com/" target="_blank"><img src="img/banner2.jpg" alt="" /></a>
-				</li>
-				<li>
-					<a href="http://www.icourse163.org/" target="_blank"><img src="img/banner3.jpg" alt="" /></a>
-				</li>
-			</ul>
-			<div class="banner-bar">
-				<i class="bbd"><a href="#"></a></i>
-				<i><a href="#"></a></i>
-				<i><a href="#"></a></i>
+
+   	<div class="banner" id="banner">
+			<div class="banner-box">
+				<ul id="banner-list" class="clearfix">
+					<li id="banner-bj1">
+						<a href="http://open.163.com/" target="_blank"><img src="img/banner1.jpg"/></a>
+					</li>
+					<li id="banner-bj2">
+						<a href="http://study.163.com/" target="_blank"><img src="img/banner2.jpg"/></a>
+					</li>
+					<li id="banner-bj3">
+						<a href="http://www.icourse163.org/" target="_blank"><img src="img/banner3.jpg"/></a>
+					</li>
+				</ul>
+				<div class="banner-bar" id="banner-bar">
+					<i class="bbd"></i>
+					<i></i>
+					<i></i>
+				</div>
 			</div>
 		</div>
+		
 		<!--banner结束-->
 
 		<!--栏目介绍开始-->
-		<div class="column">
-			<ul class="bodymax clearfix">
+		<div class="column bodymax">
+			<ul class="clearfix">
 				<li>
 					<div class="icon">
 						<div class="icon-1"></div>
@@ -148,670 +157,669 @@
 					</div>
 					<!--课程内容-->
 					<div class="contenr-l-list">
-						<ul class="checked">
+						<ul class="checked" id="contenr-l-list">
 							<li class="kc-list">
 								<a href="#">
 									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
 										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
 										</div>
 									</div>
 									<div class="kc-hover" id="kc-hover">
 										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
 
 											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
 												<dd>
-													<p>发布者：<span>几分钟网</span></p>
+													<p>发布者：<span class="provider">几分钟网</span></p>
 												</dd>
 												<dd>
-													<p>分类：<span>手绘设计</span></p>
+													<p>分类：<span class="">手绘设计</span></p>
 												</dd>
 											</dl>
 										</div>
 										<div class="kc-hover-txt">
-											<p>
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
+												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>	<li class="kc-list">
+								<a href="#">
+									<div class="kc">
+										<div class="l-img"><img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" /></div>
+										<div class="l-txt">
+											<h3 class="">混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
+											<h4 class="">混音全</h4>
+											<span class="span-1"><i class="learnerCount">510</i></span>
+											<span class="span-2">￥<i class="Listprice">800.00</i></span>
+										</div>
+									</div>
+									<div class="kc-hover" id="kc-hover">
+										<div class="kc-hover-top">
+											<img class="middlePhotoUrl" src="img/z-img.jpg" alt="课程图片" />
+
+											<dl>
+												<h3 class="ListName">手绘画系列教程</h3>
+												<dt><p><span class="learnerCount">57</span>在学</p></dt>
+												<dd>
+													<p>发布者：<span class="provider">几分钟网</span></p>
+												</dd>
+												<dd>
+													<p>分类：<span class="">手绘设计</span></p>
+												</dd>
+											</dl>
+										</div>
+										<div class="kc-hover-txt">
+											<p class="description">
 												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
 											</p>
 										</div>
 									</div>
 								</a>
 							</li>
-							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
 
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>							<li class="kc-list">
-								<a href="#">
-									<div class="kc">
-										<div class="l-img"><img src="img/z-img.jpg" alt="课程图片" /></div>
-										<div class="l-txt">
-											<h3>混音全揭秘混音全揭秘 舞曲实战篇 揭秘音乐揭秘</h3>
-											<h4>混音全</h4>
-											<span class="span-1"><i></i>510</span>
-											<span class="span-2">￥<i>800.00</i></span>
-										</div>
-									</div>
-									<div class="kc-hover" id="kc-hover">
-										<div class="kc-hover-top">
-											<img src="img/z-img.jpg" alt="课程图片" />
-
-											<dl>
-												<h3>手绘画系列教程</h3>
-												<dt><p><span>57</span>在学</p></dt>
-												<dd>
-													<p>发布者：<span>几分钟网</span></p>
-												</dd>
-												<dd>
-													<p>分类：<span>手绘设计</span></p>
-												</dd>
-											</dl>
-										</div>
-										<div class="kc-hover-txt">
-											<p>
-												生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！
-											</p>
-										</div>
-									</div>
-								</a>
-							</li>
 						</ul>
 					</div>
 					<!--课程翻页-->
@@ -989,7 +997,8 @@
 				<!--登录弹窗开始-->
 				<div class="login-win" id="login">
 					<h1>登录网易云课堂</h1>
-					<form action="">
+					<!--action="http://study.163.com/webDev/login.htm" method="get"-->
+					<form id="form">
 						<div class="user-name">
 							<label for=userName "">账号</label>
 							<input type="text" id="userName" name="userName" value="" />
@@ -999,7 +1008,7 @@
 							<input type="password" name="password" id="password" />
 						</div>
 						<div class="submit">
-							<input type="submit" id="submit" name="submit" value="登录" />
+							<input type="submit" id="submit" name="submit" value="登 录" />
 						</div>
 					</form>
 					<div class="off-win" id="login-off"></div>
@@ -1024,7 +1033,8 @@
 			</div>
 		</div>
 		<!--弹窗部分结束-->
-		<script src="js/pop.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/jiaohu.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 </html>

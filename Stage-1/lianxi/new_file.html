@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<div id="box" style="width: 200px;background: red;">fdfd</div>
+
+	<body>
+		<script type="text/javascript">
+			var box = document.getElementById("box");
+			box.onclick = function() {
+
+				//创建过期时间
+				var date = new Date();
+				date.setDate((date.getDate() + 365));
+				//+为设置多少天过期   -1代表永久删除  第二种方法 ";expires=" new Date(0);
+				console.log(date);
+				//cookie完整形式
+				//						document.cookie="user=值";expires=失效时间;path=访问路径;domain=域名访问;secure=安全的http;
+				//写入cookie  
+				document.cookie = "user=章鱼" + ";expires=" + date;
+				//			document.cookie="user1=章鱼哥"+";expires="+date;
+				//访问cookie
+				console.log(document.cookie);
+			}
+
+			var loginXhr = XMLHttpRequest;
+			alert(loginXhr);
+		</script>
+	</body>
+
+</html>

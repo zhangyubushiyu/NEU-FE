@@ -25,7 +25,6 @@
 	padding: 40px 53px 40px 40px;
 }
 
-
 .login-win h1 {
 	color: #444;
 	font-size: 18px;
@@ -85,12 +84,12 @@
 	background-image: url(../img/Sprites.png);
 	background-repeat: no-repeat;
 	background-position: -3px -180px;
-	/*border: none;*/
 }
-.off-win{
+
+.off-win {
 	position: absolute;
-	top:4px;
-	right:4px;
+	top: 4px;
+	right: 4px;
 	width: 20px;
 	height: 20px;
 	background-image: url(../img/Sprites.png);
@@ -98,19 +97,20 @@
 	background-position: -117px -20px;
 	cursor: pointer;
 }
-.video-win{
+
+.video-win {
 	padding: 20px 20px 30px 20px;
 	margin: -330px 0 0 -454px;
 	background-color: #fff;
 }
-.video-win h1{
+
+.video-win h1 {
 	color: #444;
 	font-size: 18px;
 	font-weight: inherit;
 	margin-bottom: 15px;
 }
 
-#videoPlay{
+#videoPlay {
 	width: 887px;
 }
-
